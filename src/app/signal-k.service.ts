@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 export class SignalKService {
   public data;
   public nodes: Set<string>;
-  private socketAddress: string = 'ws://demo.signalk.org/signalk/v1/stream?subscribe=self';
+  private socketAddress = 'ws://demo.signalk.org/signalk/v1/stream?subscribe=self';
   private ws: WebSocket;
 
   constructor() {
