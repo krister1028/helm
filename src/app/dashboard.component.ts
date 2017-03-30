@@ -8,14 +8,16 @@ import {SignalKService} from './signal-k.service';
 })
 export class DashboardComponent implements OnInit {
   public data;
+  public channels: Set<string>;
 
-  constructor(signalKService: SignalKService) {
-    signalKService.data.subscribe(
-      x => this.data = x.data
-    );
-  }
+
+  constructor(private signalKService: SignalKService) {}
 
   ngOnInit() {
+    this.signalKService.data.subscribe(
+      x => this.data = x.data
+    );
+    this.channels = this.signalKService.nodes;
   }
 
 }
