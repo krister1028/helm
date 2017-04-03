@@ -16,12 +16,4 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.networkSenders = this.networkService.networkSenders;
   }
-
-  getSampleValue(networkSender) {
-    networkSender.dataStream.subscribe(update => {
-      console.log(update);
-    });
-    return 'yup';
-  }
-
 }

@@ -8,11 +8,13 @@ import { DashboardComponent } from './dashboard.component';
 
 import { SignalKService } from './signal-k.service';
 import { NetworkSendersService } from './network-senders.service';
+import { GaugeComponent } from './gauge.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    GaugeComponent,
   ],
   imports: [
     BrowserModule,

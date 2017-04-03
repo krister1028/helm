@@ -1,5 +1,6 @@
 <div>The channel names from the stream:</div>
 <hr>
-<p *ngFor="let sender of networkSenders">
-    {{ getSampleValue(sender) }}
-</p>
+<div>{{ networkSenders.length }}</div>
+<div *ngFor="let sender of networkSenders">
+    <helm-gauge [sender]="sender"></helm-gauge>
+</div>

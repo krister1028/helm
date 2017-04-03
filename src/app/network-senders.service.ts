@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SignalKService } from './signal-k.service';
 import { NetworkSender } from './senders/network-sender';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 
@@ -8,7 +9,7 @@ import 'rxjs/add/operator/map';
 export class NetworkSendersService {
   public nodes: Set<string> = new Set;
   public networkSenders: NetworkSender[] = [];
-  public updateStream;
+  public updateStream: Observable<any>;
 
   constructor(private sKService: SignalKService) {
     this.updateStream = sKService.dataStream
