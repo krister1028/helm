@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard.component';
 
 import { SignalKService } from './signal-k.service';
+import { NetworkSendersService } from './network-senders.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SignalKService } from './signal-k.service';
     HttpModule
   ],
   providers: [
-    SignalKService
+    SignalKService,
+    NetworkSendersService
   ],
   bootstrap: [AppComponent]
 })
