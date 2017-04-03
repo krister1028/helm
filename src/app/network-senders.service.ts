@@ -17,10 +17,7 @@ export class NetworkSendersService {
       .filter(message => message.hasOwnProperty('updates'))
       // TODO: what's with the zero index on the array?  are we sure we always want the first element?
       .map(message => message.updates[0]).share();
-    this.updateStream.subscribe(updates => {
-      console.log(updates);
-      this.checkChannels(updates);
-    });
+    this.updateStream.subscribe(updates => this.checkChannels(updates));
   }
 
   private checkChannels(updates): void {

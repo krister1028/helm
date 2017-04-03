@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { HelmComponent } from './helm.component';
 import { DashboardComponent } from './dashboard.component';
 
 import { SignalKService } from './signal-k.service';
@@ -12,7 +12,7 @@ import { GaugeComponent } from './gauge.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    HelmComponent,
     DashboardComponent,
     GaugeComponent,
   ],
@@ -25,6 +25,6 @@ import { GaugeComponent } from './gauge.component';
     SignalKService,
     NetworkSendersService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [HelmComponent]
 })
-export class AppModule { }
+export class HelmModule { }
