@@ -1,6 +1,3 @@
-<div>The channel names from the stream:</div>
-<hr>
-<div>{{ networkSenders.length }}</div>
 <div *ngFor="let sender of networkSenders">
     <helm-gauge [sender]="sender"></helm-gauge>
 </div>

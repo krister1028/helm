@@ -4,6 +4,7 @@ import { NetworkSender } from './senders/network-sender';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/share';
 
 @Injectable()
 export class NetworkSendersService {
@@ -15,8 +16,11 @@ export class NetworkSendersService {
     this.updateStream = sKService.dataStream
       .filter(message => message.hasOwnProperty('updates'))
       // TODO: what's with the zero index on the array?  are we sure we always want the first element?
-      .map(message => message.updates[0]);
-    this.updateStream.subscribe(updates => this.checkChannels(updates));
+      .map(message => message.updates[0]).share();
+    this.updateStream.subscribe(updates => {
+      console.log(updates);
+      this.checkChannels(updates);
+    });
   }
 
   private checkChannels(updates): void {

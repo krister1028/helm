@@ -3,7 +3,7 @@ import { NetworkSender } from './senders/network-sender';
 
 @Component({
   selector: 'helm-gauge',
-  template: '<p>{{ path }}: {{ value }}</p><br>',
+  template: '<p>{{ path }}: {{ value }}</p>',
 })
 export class GaugeComponent implements OnInit {
 
@@ -17,7 +17,6 @@ export class GaugeComponent implements OnInit {
 
   ngOnInit() {
     this.sender.dataStream.subscribe(update => {
-      console.log(update);
       this.value = update.value;
       this.path = update.path;
     });
