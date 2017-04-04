@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SignalKService} from './signal-k.service';
+import { NetworkSendersService } from './network-senders.service';
 
 @Component({
   selector: 'helm-dashboard',
@@ -7,17 +7,13 @@ import {SignalKService} from './signal-k.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  public data;
-  public channels: Set<string>;
+  public networkSenders;
+  public label;
+  public value;
 
-
-  constructor(private signalKService: SignalKService) {}
+  constructor(private networkService: NetworkSendersService) {}
 
   ngOnInit() {
-    this.signalKService.data.subscribe(
-      x => this.data = x.data
-    );
-    this.channels = this.signalKService.nodes;
+    this.networkSenders = this.networkService.networkSenders;
   }
-
 }
