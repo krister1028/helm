@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NetworkSendersService } from './network-senders.service';
+import { NetworkSendersService } from './senders/network-senders.service';
 
 @Component({
   selector: 'helm-dashboard',

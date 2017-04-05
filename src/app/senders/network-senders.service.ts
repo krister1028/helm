@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SignalKService } from './signal-k.service';
-import { NetworkSender } from './senders/network-sender';
+import { NetworkSender } from './network-sender';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
