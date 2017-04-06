@@ -9,6 +9,8 @@ import { DashboardComponent } from './dashboard.component';
 import { SignalKService } from './senders/signal-k.service';
 import { NetworkSendersService } from './senders/network-senders.service';
 import { GaugeComponent } from './consumers/gauge.component';
+import { SendersService } from './senders/senders.service';
+import { TransformersService } from './transformers/transformers.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { GaugeComponent } from './consumers/gauge.component';
   ],
   providers: [
     SignalKService,
-    NetworkSendersService
+    NetworkSendersService,
+    SendersService,
+    TransformersService
   ],
   bootstrap: [HelmComponent]
 })

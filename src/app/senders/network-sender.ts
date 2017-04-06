@@ -1,13 +1,12 @@
-import { BaseSender } from './base-sender';
+import { IBaseSender } from './base-sender.interface';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 
-export class NetworkSender extends BaseSender {
+export class NetworkSender implements IBaseSender {
   public dataStream: Observable<any>;
 
   constructor(private nodeKey: string, private updateStream) {
-    super();
     this.buildStream();
   }
 
