@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NetworkSender } from './senders/network-sender';
+import { NetworkSender } from '../senders/network-sender';
 
 @Component({
   selector: 'helm-gauge',

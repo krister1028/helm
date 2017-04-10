@@ -6,9 +6,11 @@ import { HttpModule } from '@angular/http';
 import { HelmComponent } from './helm.component';
 import { DashboardComponent } from './dashboard.component';
 
-import { SignalKService } from './signal-k.service';
-import { NetworkSendersService } from './network-senders.service';
-import { GaugeComponent } from './gauge.component';
+import { SignalKService } from './senders/signal-k.service';
+import { NetworkSendersService } from './senders/network-senders.service';
+import { GaugeComponent } from './consumers/gauge.component';
+import { SendersService } from './senders/senders.service';
+import { TransformersService } from './transformers/transformers.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { GaugeComponent } from './gauge.component';
   ],
   providers: [
     SignalKService,
-    NetworkSendersService
+    NetworkSendersService,
+    SendersService,
+    TransformersService
   ],
   bootstrap: [HelmComponent]
 })
