@@ -1,3 +1,7 @@
-/**
- * Created by krister on 4/15/17.
- */
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'helm-combine-streams',
+  templateUrl: './combine-streams.dialog.template.html'
+})
+export class CombineStreamsDialogComponent {}
