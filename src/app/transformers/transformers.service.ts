@@ -11,8 +11,8 @@ export class TransformersService implements IBaseSenderService {
 
   constructor() { }
 
-  addTransformedStream(streams: Observable<any>[], transformFunc: any) {
-    this.senderStream.next(new Transformer(streams, transformFunc));
+  addTransformedStream(streams: Observable<any>[], transformFunc: any, units: string) {
+    this.senderStream.next(new Transformer(streams, transformFunc, units));
   }
 
 }
